@@ -5,7 +5,8 @@ import 'package:kodilan_flutter/ui/pages/recent/widgets/job_type.dart';
 import 'package:kodilan_flutter/ui/pages/recent/widgets/post_info.dart';
 import 'package:kodilan_flutter/ui/shared/colors.dart';
 import 'package:kodilan_flutter/ui/shared/job_title.dart';
-import 'package:timeago/timeago.dart' as timeago;
+import 'package:kodilan_flutter/ui/shared/tags_view.dart';
+import 'package:kodilan_flutter/ui/shared/utils.dart';
 
 class RecentCard extends StatelessWidget {
   final dynamic data;
@@ -44,8 +45,9 @@ class RecentCard extends StatelessWidget {
                           PostInfoWidget(
                             post.company.name,
                             post.location,
-                            _updatedAt(post),
-                          )
+                            SharedMethods().updatedAt(post),
+                          ),
+                          //TagsView(tags: post.tags),
                         ],
                       ),
                     ),
@@ -64,9 +66,4 @@ class RecentCard extends StatelessWidget {
 List<String> _tags(dynamic job) {
   List<String> tagList = job['tags'].map((s) => s as String).toList();
   return tagList;
-}
-
-String _updatedAt(dynamic job) {
-  timeago.setLocaleMessages('tr', timeago.TrMessages());
-  return timeago.format(DateTime.parse(job.updatedAt), locale: 'tr');
 }
