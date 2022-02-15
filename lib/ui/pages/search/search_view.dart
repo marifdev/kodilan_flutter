@@ -13,22 +13,22 @@ class SearchView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          TextField(
+          const TextField(
             decoration: InputDecoration(
               border: OutlineInputBorder(),
               hintText: 'Pozisyon adı, teknoloji adı...',
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          TextField(
+          const TextField(
             decoration: InputDecoration(
               border: OutlineInputBorder(),
               hintText: 'Şehir Seçin',
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           ElevatedButton(
@@ -47,7 +47,7 @@ class SearchView extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           SearchSuggestions(),
