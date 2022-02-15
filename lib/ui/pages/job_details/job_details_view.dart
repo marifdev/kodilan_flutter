@@ -10,7 +10,7 @@ import 'package:kodilan_flutter/ui/shared/utils.dart';
 
 class JobDetails extends StatelessWidget {
   final Post post;
-  JobDetails({Key? key, required this.post}) : super(key: key);
+  const JobDetails({Key? key, required this.post}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class JobDetails extends StatelessWidget {
                             children: [
                               Text(
                                 post.company!.name!,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 20,
                                 ),
                               ),
@@ -204,7 +204,10 @@ class JobDetails extends StatelessWidget {
                         Text('Site Üzerinden Başvur'),
                       ],
                     ),
-                  )
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
                 ],
               ),
             ),

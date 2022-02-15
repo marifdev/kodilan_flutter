@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kodilan_flutter/ui/pages/recent/recent_view.dart';
+import 'package:kodilan_flutter/ui/pages/search/search_view.dart';
 import 'package:kodilan_flutter/ui/shared/colors.dart';
 
 void main() {
@@ -33,10 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     Recent(),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
+    SearchView(),
     Text(
       'Index 2: School',
       style: optionStyle,

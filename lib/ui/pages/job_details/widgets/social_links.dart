@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kodilan_flutter/models/post.dart';
 
 class SocialLinks extends StatelessWidget {
@@ -12,31 +13,27 @@ class SocialLinks extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(right: 8.0),
           child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Colors.black54,
-            ),
+            style: ElevatedButton.styleFrom(primary: Colors.black45),
             onPressed: () {},
-            child: Icon(Icons.public),
+            child: const Icon(Icons.public),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(right: 8.0),
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(primary: Colors.blueAccent),
+            onPressed: () {},
+            child: const FaIcon(FontAwesomeIcons.twitter),
           ),
         ),
         Padding(
           padding: const EdgeInsets.only(right: 8.0),
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: Colors.black54,
+              primary: const Color.fromARGB(255, 3, 112, 173),
             ),
             onPressed: () {},
-            child: Icon(Icons.public), //TODO: add twitter icon
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(right: 8.0),
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Colors.black54,
-            ),
-            onPressed: () {},
-            child: Icon(Icons.public), //TODO: add linkedin icon
+            child: const FaIcon(FontAwesomeIcons.linkedin),
           ),
         ),
       ]),

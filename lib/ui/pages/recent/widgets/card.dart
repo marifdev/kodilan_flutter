@@ -3,9 +3,7 @@ import 'package:kodilan_flutter/ui/pages/job_details/job_details_view.dart';
 import 'package:kodilan_flutter/ui/pages/recent/widgets/company_logo.dart';
 import 'package:kodilan_flutter/ui/pages/recent/widgets/job_type.dart';
 import 'package:kodilan_flutter/ui/pages/recent/widgets/post_info.dart';
-import 'package:kodilan_flutter/ui/shared/colors.dart';
 import 'package:kodilan_flutter/ui/shared/job_title.dart';
-import 'package:kodilan_flutter/ui/shared/tags_view.dart';
 import 'package:kodilan_flutter/ui/shared/utils.dart';
 
 class RecentCard extends StatelessWidget {
@@ -18,7 +16,6 @@ class RecentCard extends StatelessWidget {
     var post = data[index];
     return Card(
       child: InkWell(
-        splashColor: AppColors.mainColor,
         onTap: () {
           Navigator.push(
             context,
@@ -36,20 +33,18 @@ class RecentCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Expanded(
-                    child: Container(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          JobTitleWidget(post.position),
-                          JobTypeWidget(post.type),
-                          PostInfoWidget(
-                            post.company.name,
-                            post.location,
-                            SharedMethods().updatedAt(post),
-                          ),
-                          //TagsView(tags: post.tags),
-                        ],
-                      ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        JobTitleWidget(post.position),
+                        JobTypeWidget(post.type),
+                        PostInfoWidget(
+                          post.company.name,
+                          post.location,
+                          SharedMethods().updatedAt(post),
+                        ),
+                        //TagsView(tags: post.tags),
+                      ],
                     ),
                   ),
                   CompanyLogoWidget(post.company.logo, 40, 40),
@@ -63,7 +58,7 @@ class RecentCard extends StatelessWidget {
   }
 }
 
-List<String> _tags(dynamic job) {
-  List<String> tagList = job['tags'].map((s) => s as String).toList();
-  return tagList;
-}
+// List<String> _tags(dynamic job) {
+//   List<String> tagList = job['tags'].map((s) => s as String).toList();
+//   return tagList;
+// }
