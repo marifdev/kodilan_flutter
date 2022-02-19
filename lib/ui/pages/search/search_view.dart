@@ -44,7 +44,7 @@ class _SearchViewState extends State<SearchView> {
             controller: locationController,
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              hintText: 'Şehir Seçin',
+              hintText: 'Şehir adı...',
             ),
           ),
           const SizedBox(
