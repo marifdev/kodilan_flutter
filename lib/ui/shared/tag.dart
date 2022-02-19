@@ -15,7 +15,7 @@ class Tag extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => SearchResult(
-              tag: tag.name!,
+              tag: tag,
             ),
           ),
         );

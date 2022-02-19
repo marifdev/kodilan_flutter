@@ -1,8 +1,9 @@
 class Tags {
   String? name;
   String? slug;
+  String? type;
 
-  Tags({this.name, this.slug});
+  Tags({this.name, this.slug, this.type});
 
   Tags.fromJson(Map<String, dynamic> json) {
     name = json['name'];

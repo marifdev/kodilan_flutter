@@ -1,23 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:kodilan_flutter/ui/pages/search_result/search_result_viewmodel.dart';
 
+import '../../../models/tags.dart';
 import '../../shared/colors.dart';
 import '../recent/widgets/card.dart';
 
 class SearchResult extends StatelessWidget {
-  final String? tag;
+  final Tags? tag;
   final String? location;
   final String? company;
-  const SearchResult({Key? key, this.tag, this.location, this.company})
+  final String? query;
+  const SearchResult(
+      {Key? key, this.tag, this.location, this.company, this.query})
       : super(key: key);
 
-  getSearchResults(tag, location, company) {
+  getSearchResults(tag, company) {
     if (tag != null) {
-      return getTagPosts(tag);
-    } else if (location != null) {
-      return getLocationPosts(location);
+      if (tag.type == null || tag.type == 'tag') {
+        return getTagPosts(tag.name);
+      } else if (tag.type == 'location') {
+        return getLocationPosts(tag.name);
+      } else if (tag.type == 'jobType') {
+        return getTypePosts(tag.name);
+      }
     } else if (company != null) {
       return getCompanyPosts(company);
+    } else if (query != null) {
+      return getSearchedPosts(query, location);
     }
   }
 
@@ -25,11 +34,11 @@ class SearchResult extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Arama Sonuçları"),
+        title: const Text("Arama Sonuçları"),
         backgroundColor: AppColors.mainColor,
       ),
       body: FutureBuilder(
-        future: getSearchResults(tag, location, company),
+        future: getSearchResults(tag, company),
         builder: (context, AsyncSnapshot snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasData) {

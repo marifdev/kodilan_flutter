@@ -97,7 +97,7 @@ class JobDetails extends StatelessWidget {
                             color: AppColors.mainColor,
                           ),
                         ),
-                        Text(post.position!),
+                        Expanded(child: Text(post.position!)),
                       ],
                     ),
                   ),

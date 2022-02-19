@@ -6,7 +6,6 @@ class TagsView extends StatelessWidget {
   final List<Tags>? tags;
   const TagsView({Key? key, required this.tags}) : super(key: key);
 
-  // TODO: make tags clickable
   @override
   Widget build(BuildContext context) {
     return Wrap(

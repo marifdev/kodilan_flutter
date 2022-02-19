@@ -5,17 +5,17 @@ import '../../../../models/tags.dart';
 
 class SearchSuggestions extends StatelessWidget {
   final List<Tags> tags = [
-    Tags(name: 'Frontend'),
-    Tags(name: 'Backend'),
-    Tags(name: 'Mobile'),
-    Tags(name: 'DevOps'),
-    Tags(name: 'Istanbul'),
-    Tags(name: 'Izmir'),
-    Tags(name: 'Ankara'),
-    Tags(name: 'Remote'),
-    Tags(name: 'Tam Zamanli'),
-    Tags(name: 'Yari zamanli'),
-    Tags(name: 'Stajyer'),
+    Tags(name: 'Frontend', type: 'tag'),
+    Tags(name: 'Backend', type: 'tag'),
+    Tags(name: 'Mobile', type: 'tag'),
+    Tags(name: 'DevOps', type: 'tag'),
+    Tags(name: 'İstanbul', type: 'location'),
+    Tags(name: 'İzmir', type: 'location'),
+    Tags(name: 'Ankara', type: 'location'),
+    Tags(name: 'Remote', type: 'location'),
+    Tags(name: 'Tam Zamanlı', type: 'jobType'),
+    Tags(name: 'Yarı Zamanlı', type: 'jobType'),
+    Tags(name: 'Stajyer', type: 'jobType'),
   ];
   SearchSuggestions({Key? key}) : super(key: key);
 
