@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kodilan_flutter/models/tags.dart';
+import 'package:kodilan_flutter/ui/shared/tag.dart';
 
 class TagsView extends StatelessWidget {
   final List<Tags>? tags;
@@ -8,23 +9,12 @@ class TagsView extends StatelessWidget {
   // TODO: make tags clickable
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: Wrap(
-        spacing: 8,
-        runSpacing: 8,
-        children: tags!.map((tag) {
-          return Container(
-            padding: const EdgeInsets.all(5),
-            child: Text(tag.name!),
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.grey,
-              ),
-              borderRadius: BorderRadius.circular(2),
-            ),
-          );
-        }).toList(),
-      ),
+    return Wrap(
+      spacing: 8,
+      runSpacing: 8,
+      children: tags!.map((tag) {
+        return Tag(tag: tag);
+      }).toList(),
     );
   }
 }

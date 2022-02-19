@@ -21,9 +21,8 @@ class SearchSuggestions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      runAlignment: WrapAlignment.center,
-      children: [TagsView(tags: tags)],
+    return TagsView(
+      tags: tags,
     );
   }
 }

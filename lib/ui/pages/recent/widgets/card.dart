@@ -6,6 +6,8 @@ import 'package:kodilan_flutter/ui/pages/recent/widgets/post_info.dart';
 import 'package:kodilan_flutter/ui/shared/job_title.dart';
 import 'package:kodilan_flutter/ui/shared/utils.dart';
 
+import '../../../shared/tags_view.dart';
+
 class RecentCard extends StatelessWidget {
   final dynamic data;
   final int index;
@@ -32,7 +34,7 @@ class RecentCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Expanded(
+                  Flexible(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
@@ -43,11 +45,11 @@ class RecentCard extends StatelessWidget {
                           post.location,
                           SharedMethods().updatedAt(post),
                         ),
-                        //TagsView(tags: post.tags),
+                        TagsView(tags: post.tags),
                       ],
                     ),
                   ),
-                  CompanyLogoWidget(post.company.logo, 40, 40),
+                  CompanyLogoWidget(post.company, 40, 40),
                 ],
               ),
             ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kodilan_flutter/ui/pages/recent/widgets/card.dart';
 import 'package:kodilan_flutter/ui/pages/recent/recent_viewmodel.dart';
+import 'package:kodilan_flutter/ui/pages/recent/widgets/card.dart';
 
 class Recent extends StatelessWidget {
   const Recent({Key? key}) : super(key: key);
