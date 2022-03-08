@@ -19,6 +19,7 @@ Future<List<Post>> getSearchedPosts(query, location) async {
 }
 
 Future<List<Post>> getTagPosts(String tag) async {
+  tag = tag.replaceAll(RegExp(r'[^\w\s]+'), '');
   final response =
       await http.get(Uri.parse('https://api.kodilan.com/tags/$tag/posts'));
   // Use the compute function to run parsePhotos in a separate isolate.
